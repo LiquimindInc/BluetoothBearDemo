@@ -1,30 +1,29 @@
-﻿using System;
+﻿using BluetoothBearDemo.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
 
 namespace BluetoothBearDemo
 {
     public class App : Application
     {
+
+        private ViewModelLocator _locator;
+
         public App()
         {
-            // The root page of your application
-            MainPage = new ContentPage
+            _locator = new ViewModelLocator();
+            MainPage = new NavigationPage(new ScanPage());
+        }
+
+        public ViewModelLocator Locator
+        {
+            get
             {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-                }
-            };
+                return _locator;
+            }
         }
 
         protected override void OnStart()

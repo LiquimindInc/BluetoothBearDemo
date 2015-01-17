@@ -23,8 +23,12 @@ namespace BluetoothBearDemo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Xamarin.Behaviors.Infrastructure.Init();
             BluetoothBear.BleManageriOS.Initialize();
-            LoadApplication(new App());
+            BluetoothBear.BleManageriOS d = new BluetoothBear.BleManageriOS();
+            d.StartBleScan();
+            
+            LoadApplication(new BluetoothBearDemo.App());
 
             return base.FinishedLaunching(app, options);
         }

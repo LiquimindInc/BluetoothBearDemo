@@ -49,7 +49,8 @@
     <Reference Include="BluetoothBear">
       <HintPath>..\..\packages\BluetoothBear.1.3.1.0\lib\portable-net45+win+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\BluetoothBear.dll</HintPath>
     </Reference>
-    <Reference Include="BluetoothBearAndroid">
+    <Reference Include="BluetoothBearAndroid, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\BluetoothBearAndroid.1.3.1\lib\MonoAndroid22\BluetoothBearAndroid.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup">

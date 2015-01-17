@@ -13,6 +13,8 @@ namespace BluetoothBearDemo.Views
         public ScanPage()
         {
             InitializeComponent();
+            BindingContext = ((App)Application.Current).Locator.ScanVM;
+            deviceListView.RowHeight = 400;
         }
     }
 }
