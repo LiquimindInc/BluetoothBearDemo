@@ -24,8 +24,7 @@ namespace BluetoothBearDemo.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             Xamarin.Behaviors.Infrastructure.Init();
-            BluetoothBear.BleManageriOS.Initialize();
-            BluetoothBear.BleManageriOS d = new BluetoothBear.BleManageriOS();
+            BluetoothBear.BleManageriOS.Initialize();      
             d.StartBleScan();
             
             LoadApplication(new BluetoothBearDemo.App());

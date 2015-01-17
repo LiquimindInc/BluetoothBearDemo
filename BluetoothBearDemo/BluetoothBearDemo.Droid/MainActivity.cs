@@ -15,9 +15,10 @@ namespace BluetoothBearDemo.Droid
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            Xamarin.Behaviors.Infrastructure.Init();
             BluetoothBear.BleManagerAndroid.Initialize();
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new BluetoothBearDemo.App());
         }
     }
 }
