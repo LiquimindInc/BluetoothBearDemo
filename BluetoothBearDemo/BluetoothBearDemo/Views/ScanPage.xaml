@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             x:Class="BluetoothBearDemo.Views.ScanPage">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name = "Scan" Command="{Binding ScanCommand}" />
+    <ToolbarItem Name = "Settings"/>
+  </ContentPage.ToolbarItems>
+
+  <ListView x:Name="deviceListView" ItemsSource="{Binding Devices}"  SelectedItem="{Binding SelectedDevice, Mode=TwoWay}"   >
+    <b:Interaction.Behaviors>
+      <b:BehaviorCollection>
+        <b:EventToCommand EventName="ItemTapped"  Command="{Binding ItemSelectedCommand}" />
+      </b:BehaviorCollection>
+    </b:Interaction.Behaviors>
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+            <StackLayout Orientation="Horizontal" >
+              <BoxView Color="Red"></BoxView>
+              <StackLayout>
+                <Label Text="{Binding Name}"></Label>
+                <Label Text="{Binding ID}"></Label>
+                <Label Text="{Binding ConnectionState}"></Label>
+                <Label Text="Revolutions:"></Label>
+                <Label Text="{Binding WheelRev}"></Label>
+                <Label Text="Interval:"></Label>
+                <Label Text="{Binding WheelTime}"></Label>
+                <Label Text="Revolutions:"></Label>
+                <Label Text="{Binding CrankRev}"></Label>
+                <Label Text="Interval:"></Label>
+                <Label Text="{Binding CrankTime}"></Label>
+              </StackLayout>
+              <BoxView x:Name="boxView" Color="Blue" ></BoxView>
+            </StackLayout>
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+
+
+</ContentPage>
